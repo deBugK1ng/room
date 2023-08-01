@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding-top: 100px;
+            height: 3000px;
+        }
+
+        div {
+            display: none;
+            margin: 100px;
+            overflow: scroll;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div>
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+        1111111111111111111111
+    </div>
+    <script>
+        const div = document.querySelector(`div`)
+
+        //页面滚动事件
+        window.addEventListener(`scroll`,function(){
+            //获取HTML元素的写法
+            // document.documentElement
+            const n = document.documentElement.scrollTop
+            if(n >= 100){
+                div.style.display = `block`
+            } else {
+                div.style.display = `none`
+            }
+        })
+    </script>
+</body>
+</html>

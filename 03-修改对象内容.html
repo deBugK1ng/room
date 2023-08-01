@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">我是文字的内容</div>
+    <img src="./images/1.webp" alt="songwen" title="songwen">
+    <script>
+        // // 1.获取元素
+        // const box = document.querySelector('.box')
+        // // 2.修改文字内容 对象.innerText
+        // console.log(box.innerHTML)//获取文字的内容
+        // box.innerHTML = '<strong>我是一个盒子</strong>'//解析标签
+
+        // const random = Math.floor(Math.random() * 6 + 1)
+        // const img = document.querySelector(`img`)
+        // img.src = `./images/${random}.webp`
+
+        const box = document.querySelector(`.box`)
+        box.style.width = `300px`
+        box.style.backgroundColor = `hotpink`
+        box.style.border = `2px solid blue`
+    </script>
+</body>
+</html>

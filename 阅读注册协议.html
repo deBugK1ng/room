@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button disabled></button>
+
+    <script>
+        const button = document.querySelector(`button`)
+        let i = 5
+
+        let n = setInterval(function(){
+            i--
+            button.innerHTML = `已阅读用户协议(${i})`
+            if(i === 0){
+                button.innerHTML = `已阅读用户协议`
+                button.disabled = false
+                clearInterval(n)
+            }
+        },1000)
+
+        
+    </script>
+</body>
+
+</html>

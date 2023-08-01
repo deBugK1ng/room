@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 200px;
+            height: 300px;
+            background-color: darkred;
+            text-align: center;
+            color: #fff;
+            line-height: 1;
+            overflow: hidden;
+
+        }
+
+        .next {
+            font-weight: 400;
+            margin: 25px 0 14px;
+        }
+
+        .title {
+            font-size: 30px;
+        }
+
+        .clock {
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+
+
+        #hour {
+            font-size: 25px;
+            background-color: #000;
+        }
+
+        #minutes {
+            font-size: 25px;
+            background-color: #000;
+        }
+
+        #second {
+            font-size: 25px;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p class="next">今天是2222年2月22日</p>
+        <p class="title">下班倒计时</p>
+        <p class="clock">
+            <span id="hour"></span>:
+            <span id="minutes"></span>:
+            <span id="second"></span>
+        </p>
+        <p class="end">18:30:00下课</p>
+    </div>
+
+    <script>
+        const hour = document.querySelector(`#hour`)
+        const minutes = document.querySelector(`#minutes`)
+        const second = document.querySelector(`#second`)
+        const next = document.querySelector(`.next`)
+        next.innerHTML = `今天是${new Date().getFullYear()}年${new Date().getMonth() + 1}月${new Date().getDate()}日`
+
+        daojishi()
+
+        setInterval(daojishi, 1000)
+
+
+        function daojishi() {
+            const date = +new Date('2023-07-19 18:30:00')
+            const final = (date - (+new Date())) / 1000
+            const hourTime = parseInt(final / 60 / 60 % 24)
+            const minutesTime = parseInt(final / 60 % 60)
+            const secondsTime = parseInt(final % 60)
+            // console.log(final)
+            // console.log(date)
+            hour.innerHTML = `${hourTime < 10 ? '0' + hourTime : hourTime}`
+            minutes.innerHTML = `${minutesTime < 10 ? '0' + minutesTime : minutesTime}`
+            second.innerHTML = `${secondsTime < 10 ? '0' + secondsTime : secondsTime}`
+        }
+    </script>
+</body>
+
+</html>

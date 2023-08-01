@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // setInterval(函数，间隔时间)
+        //每隔一段时间，调用一次函数,一旦开启，永不停歇
+        // 定时器返回的是一个id数字
+
+        // clearInterval(变量名)
+        let n = setInterval(function(){
+            console.log(`一秒执行一次`)
+        },1)
+
+        clearInterval(n)
+
+        //重新赋值
+        n = setInterval(function(){
+            console.log(`一秒执行一次`)
+        },1)
+    </script>
+</body>
+</html>
