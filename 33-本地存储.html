@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //要存储一个名字
+        localStorage.setItem("uname",'yzf')
+        //获取方式
+        console.log
+        (localStorage.getItem('uname'))
+        //删除本地存储，只删除名字
+        // localStorage.removeItem('uname')
+        localStorage.setItem('uname','cfz')
+
+        //设置一个年龄
+        //本地存储只能存储字符串数据类型
+        localStorage.setItem('age',18)
+        console.log(localStorage.getItem('age'))
+    </script>
+</body>
+</html>

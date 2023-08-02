@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/ad.png" alt="">
+    
+
+    <script>
+        //延迟函数,执行一次
+        //返回值：函数的序号
+        let timer = setTimeout(() => {
+            console.log('时间到了');
+        },2000)
+
+        const img = document.querySelector(`img`)
+        setTimeout(() => {
+            img.style.display = 'none'
+        },3000)
+
+
+    </script>
+</body>
+</html>

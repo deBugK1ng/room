@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://www.baicu.com">支付成功<span>5</span>秒之后跳转到首页</a>
+
+    <a href="#/my">我的</a>
+    <a href="#/friend">朋友</a>
+    <a href="#/download">下载</a>
+    <button class="reload">刷新</button>
+
+    <script>
+        // const a = document.querySelector(`a`)
+        // //开启定时器
+        // let num = 5
+        // let timeId = setInterval(() => {
+        //     num--
+        //     a.innerHTML = `支付成功<span>${num}</span>秒之后跳转到首页`
+        //     if(num === 0){
+        //         clearInterval(timeId)
+        //         //跳转
+        //         location.href = 'http://www.baidu.com'
+        //     }
+        // }, 1000)
+        
+        const reload = document.querySelector(`.reload`)
+        reload.addEventListener(`click`,() => {
+            location.reload()
+        })
+        
+    </script>
+</body>
+
+</html>
