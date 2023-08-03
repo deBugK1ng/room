@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 1.元字符边界符
+        // console.log(/^哈/.test('哈哈'))
+        // console.log(/^哈/.test('二哈'))
+        // console.log(/^哈$/.test('哈'))  //只有这种情况为true
+        // console.log(/^哈$/.test('哈哈'))  //false
+
+        //2.量词 设定某个模式出现的次数
+        // - * 重复零次或更多次
+        // - + 重复一次或更多次
+        // - ? 重复零次或一次
+        // - {n} 重复n次
+        // - {n,} 重复n次或更多次
+        // - {n,m} 重复n到m次
+
+        // console.log('-------------------------------')
+
+        // console.log(/^哈$/.test('哈'))
+        // console.log(/^哈*$/.test(''))
+        // console.log(/^哈*$/.test('哈'))
+        // console.log(/^哈*$/.test('哈哈'))
+        // console.log(/^哈*$/.test('二哈'))
+        // console.log(/^哈*$/.test('哈很傻'))
+        // console.log(/^哈*$/.test('哈很哈'))
+
+        // console.log('-------------------------------')
+        // console.log(/^哈+$/.test(''))
+        // console.log(/^哈+$/.test('哈'))
+        // console.log(/^哈+$/.test('哈哈'))
+        // console.log(/^哈+$/.test('二哈'))
+        // console.log(/^哈+$/.test('哈很傻'))
+        // console.log(/^哈+$/.test('哈很哈'))
+
+        //量词 ? 0 || 1
+        // console.log('-------------------------------')
+        // console.log(/^哈?$/.test(''))
+        // console.log(/^哈?$/.test('哈'))
+        // console.log(/^哈?$/.test('哈哈'))
+        // console.log(/^哈?$/.test('二哈'))
+        // console.log(/^哈?$/.test('哈很傻'))
+        // console.log(/^哈?$/.test('哈很哈'))
+
+        //量词 {n} 写几，就必须出现几次
+        // console.log
+        //     ('-------------------------------')
+        // console.log(/^哈{4}$/.test('哈'))
+        // console.log(/^哈{4}$/.test('哈哈'))
+        // console.log(/^哈{4}$/.test('哈哈哈'))
+        // console.log(/^哈{4}$/.test('哈哈哈哈'))
+        // console.log(/^哈{4}$/.test('哈哈哈哈哈'))
+        // console.log(/^哈{4}$/.test('哈哈哈哈哈哈'))
+
+        //量词 {n,} 写几，就必须 >= n次
+        // console.log
+        //     ('-------------------------------')
+        // console.log(/^哈{4,}$/.test('哈'))
+        // console.log(/^哈{4,}$/.test('哈哈'))
+        // console.log(/^哈{4,}$/.test('哈哈哈'))
+        // console.log(/^哈{4,}$/.test('哈哈哈哈'))
+        // console.log(/^哈{4,}$/.test('哈哈哈哈哈'))
+        // console.log(/^哈{4,}$/.test('哈哈哈哈哈哈'))
+
+        //量词 {n,m} 写几，就必须 >= n && <= m次,逗号左右两侧千万不能有空格
+        // console.log
+        //     ('-------------------------------')
+        // console.log(/^哈{4,6}$/.test('哈'))
+        // console.log(/^哈{4,6}$/.test('哈哈'))
+        // console.log(/^哈{4,6}$/.test('哈哈哈'))
+        // console.log(/^哈{4,6}$/.test('哈哈哈哈'))
+        // console.log(/^哈{4,6}$/.test('哈哈哈哈哈'))
+        // console.log(/^哈{4,6}$/.test('哈哈哈哈哈哈'))
+        // console.log(/^哈{4,6}$/.test('哈哈哈哈哈哈哈'))
+
+        //3.字符类[],只选其中一个
+        console.log(/^[abc]$/.test('a'))
+        console.log(/^[abc]$/.test('b'))
+        console.log(/^[abc]$/.test('c'))
+        console.log(/^[abc]$/.test('ab')) //false
+        console.log(/^[abc]{2}$/.test('ab'))
+        console.log
+            ('-------------------------------')
+        //[a-z],只选一个
+        console.log(/^[a-z]$/.test('p'))
+        console.log(/^[A-Z]$/.test('p')) //FALSE
+        console.log(/^[0-9]$/.test(2)) 
+        console.log(/^[A-Za-z0-9]$/.test(2)) 
+        console.log
+            ('-------------------------------')
+        // 中括号里面加 ^ 表示取反
+        // . 匹配除了换行符之外的任何单个字符
+
+
+        //预定义
+            // /d 0-9
+            // /D ^0-9
+            // /w A-Za-z0-9
+            // /W ^A-Za-z0-9
+            // /s [\t\r\n\v\f]
+            // /S [^\t\r\n\v\f]
+
+        //修饰符
+            // i ignore 不区分大小写
+            // g global 匹配所有满足正则表达式的结果
+        
+        //replace 替换
+            // 字符串.replace(/正则表达式/,'替换的文本')
+    </script>
+</body>
+
+</html>
