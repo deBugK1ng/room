@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //split 把 字符串转换为数组  join 把 数组转换为字符串
+        const str = 'cfz,sw'
+        const arr = str.split(',')
+        console.log(arr)
+        const str1 = '2023-8-8'
+        const arr1 = str1.split('-')
+        console.log(arr1)
+
+        //字符串截取 substring(开始索引号[，结束索引号]) 结束索引号不包含想要截取的那部分
+        const str2 = '我是cfz的爹'
+        console.log(str2.substring(2,5))
+
+        //startswith 监测是否以某个字符开头，返回true or false
+        const str3 = 'cfz是我的儿'
+        console.log(str3.startsWith('是我',3))
+
+        //includes() 判断一个字符串是否于另一个字符串之中，无论位置在哪，返回true or false
+        const str4 = 'sw是我的儿'
+        console.log(str3.includes('我的'))
+
+    </script>
+</body>
+</html>

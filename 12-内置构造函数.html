@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //三个常用的静态方法
+        const o = { uname: 'cfz', age: 18 }
+        //返回的是个数组
+        console.log(Object.keys(o))
+        console.log(Object.values(o))
+
+        //拷贝
+        // const oo = {}
+        // Object.assign(oo,o)
+        // console.log(oo)
+        Object.assign(o, { gender: '女' })
+        console.log(o)
+
+        //数组reduce
+        // const arr = [1, 5, 8]
+        // const total = arr.reduce(function(prev,current){
+        //     return prev + current
+        // })
+        // console.log(total)
+
+        // const total = arr.reduce(function(prev,current){
+        //     return prev + current
+        // },10)
+        // console.log(total)
+        //如果没有起始值，则上一次值以数组第一个数组元素的值为起始值
+        //每一次循环，把返回值给作为下一次循环的上一次值
+        //如果有起始值，则起始值作为上一次值
+        // const total = arr.reduce((prev, current) => prev + current, 10)
+
+        const arr = [{
+            name: 'cfz',
+            salary: 10000
+        }, {
+            name: 'sw',
+            salary: 10000
+        }, {
+            name: 'wry',
+            salary: 10000
+        }]
+        //计算薪资
+        const total = arr.reduce((prev, current) => prev + current.salary * 1.3, 0)
+        console.log(total)
+        
+    </script>
+</body>
+
+</html>

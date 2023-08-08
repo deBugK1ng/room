@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function Pig(name){
+            this.name = name
+        }
+        Pig.eyes = 2    //静态属性
+        Pig.sayHi = function(){ //静态方法
+            console.log(this)
+        }
+        console.log(Pig.eyes)
+        Pig.sayHi()
+    </script>
+</body>
+</html>

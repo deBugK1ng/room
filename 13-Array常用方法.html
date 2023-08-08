@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        // find()方法
+
+        // const arr = ['red', 'green', 'blue']
+        // const re = arr.find(function (item) {
+        //     return item === 'blue'
+        // })
+        // console.log(re)
+
+        const arr = [
+            {
+                name: '小米',
+                price: 1999
+            },
+            {
+                name: '华为',
+                price: 3999
+            }
+        ]
+
+        //找小米这条数据，并且返回这个对象
+        const re = arr.find(item => item.name === '小米')
+        console.log(re)
+
+        //every() 方法
+        //每一个是否都符合条件，符合返回true，否则返回false
+        const arr1 = [10,20,30]
+        const flag = arr1.every(item => item >= 10)
+        console.log(flag)
+
+        //from() 方法
+        const lis = document.querySelectorAll(`li`)
+        console.log(lis)
+        const liss = Array.from(lis)
+        console.log(liss)
+        liss.pop('li')
+        console.log(liss)
+    </script>
+</body>
+
+</html>
