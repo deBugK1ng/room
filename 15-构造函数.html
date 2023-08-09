@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //公共属性写到构造函数里
+        function Star(uname,age){
+            this.uname = uname
+            this.age = age
+        }
+
+        //原型
+        //公共方法写到原型上
+        Star.prototype.sing = function () {
+            console.log('sing');
+        }
+        
+        const cfz = new Star('cfz',18)
+        const sw = new Star('sw',40)
+        cfz.sing()
+        sw.sing()
+
+        console.log(cfz.sing === sw.sing)
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //构造函数constructor
+        function Star() {
+
+        }
+
+        Star.prototype = {
+            //从新指回创造这个原型对象的构造函数
+            constructor: Star,
+            sing: function () {
+                console.log('sing')
+            },
+            dance: function () {
+                console.log('dance')
+            }
+        }
+        const ldh = new Star()  
+    </script>
+</body>
+
+</html>
