@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+
+  <script src="./lodash.min.js"></script>
+  <script>
+    //防抖:单位时间内,频繁触发事件,只执行最后一次
+    const box = document.querySelector('.box')
+    let i = 1
+    function mouseMove() {
+      box.innerHTML = i++
+      //如果里面存在大量消耗性能代码,可能造成卡顿
+
+    }
+    //添加事件
+    // box.addEventListener('mousemove',_.debounce(mouseMove,500))
+
+    //手写防抖函数
+    function debounce(fn, t) {
+      let timer
+      // return 返回一个匿名函数
+      return function () {
+        if (timer) clearInterval(timer)
+        timer = setTimeout(function () {
+          fn()  //加小括号调用fn函数
+        }, t)
+      }
+    }
+    box.addEventListener('mousemove', debounce(mouseMove, 500))
+  </script>
+</body>
+
+</html>

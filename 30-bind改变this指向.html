@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>发送短信</button>
+
+    <script>
+        const obj = {
+            age: 18
+        }
+        //bind不会调用函数,但是能改变函数内部this指向
+        function fn() {
+            console.log(this)
+        }
+
+
+
+        const fun = fn.bind(obj)
+        fun()
+
+        const btn = document.querySelector(`button`)
+        btn.addEventListener('click', function () {
+            //禁用按钮
+            this.disabled = true
+            setTimeout(function () {
+                //在这个普通函数里面要由原来的window改为btn
+                this.disabled = false
+            }.bind(this), 2000);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //递归深拷贝
+        const obj = {
+            uname: 'pink',
+            age: 18,
+            hobby: ['唱', '跳'],
+            family:{
+                baby:'sw'
+            }
+        }
+        const o = {}
+        //拷贝函数
+        function deepCopy(newObj, oldObj) {
+            for (let k in oldObj) {
+                //处理数组问题
+                if (oldObj[k] instanceof Array) {
+                    newObj[k] = []
+                    deepCopy(newObj[k], oldObj[k])
+                } else if (oldObj[k] instanceof Object) {
+                    newObj[k] = {}
+                    deepCopy(newObj[k], oldObj[k])
+                } else {
+                    //k 是 属性名 oldObj[k] 属性值
+                    newObj[k] = oldObj[k]
+                }
+            }
+        }
+        deepCopy(o, obj)
+        console.log(o)
+        o.age = 20
+        o.hobby[0] = '篮球'
+        console.log(obj)
+
+
+    </script>
+</body>
+
+</html>
