@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        //1.创建对象
+        const xhr = new XMLHttpRequest()
+
+        //2.配置请求方法和请求url地址
+        xhr.open('GET','http://hmajax.itheima.net/api/city?pname=湖北省')
+
+        //3.监听landed时间，接收响应结束
+        xhr.addEventListener('loadend',() => {
+            // console.log(xhr.response)
+            const data = JSON.parse(xhr.response)
+            // console.log(data.list)
+            document.querySelector(`div`).innerHTML = (data.list.join('<br>'))
+        })
+
+        //4.发送请求
+        xhr.send()
+    </script>
+</body>
+</html>
