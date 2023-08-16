@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 100px;
+            border: 3px solid #000;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.准备容器
+    2.引包(引入开发版本包/生产版本包)官网
+    3.创建实例
+    4.添加配置项 -->
+
+    <!-- v-show:切换 css 的 display:none 控制显示隐藏，频繁切换用 -->
+
+    <!-- v-if:基于条件判断，是否创建或移除元素结点，不频繁切换用 -->
+
+    <div id="app">
+        <div class="box" v-show="flag">v-show</div>
+        <div class="box" v-if="flag">v-if</div>
+    </div>
+
+    <!-- 引入开发版本包,包含注释和警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            //通过el配置选择器,指定Vue管理的是哪个盒子
+            el: '#app',
+            //通过data提供数据
+            data: {
+                flag:true
+            }
+        })
+    </script>
+</body>
+
+</html>

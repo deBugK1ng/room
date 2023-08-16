@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.准备容器
+    2.引包(引入开发版本包/生产版本包)官网
+    3.创建实例
+    4.添加配置项 -->
+
+    <div id="app">
+        <button @mouseenter="count--">-</button>
+        <span>{{count}}</span>
+        <button @click="count+=2">+</button><br><br>
+        <button @click="fn">切换显示隐藏</button>
+        <h1 v-show="flag">cfz</h1>
+    </div>
+
+    <!-- 引入开发版本包,包含注释和警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            //通过el配置选择器,指定Vue管理的是哪个盒子
+            el: '#app',
+            //通过data提供数据
+            data: {
+                msg: 'Hello',
+                count: 666,
+                flag:false
+            },
+            methods:{
+                //methods提供方法
+                fn(){
+                    this.flag = !this.flag
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

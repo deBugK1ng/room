@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.准备容器
+    2.引包(引入开发版本包/生产版本包)官网
+    3.创建实例
+    4.添加配置项 -->
+
+    <div id="app">
+        <!-- 插值表达式 -->
+        {{nickname}}
+        {{nickname.toUpperCase()}}
+        {{friend.desc}}
+    </div>
+
+    <!-- 引入开发版本包,包含注释和警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                nickname: 'tony',
+                friend:{
+                    name:'csy',
+                    desc:'热爱学习'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
